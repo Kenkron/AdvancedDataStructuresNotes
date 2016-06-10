@@ -3,6 +3,8 @@ Advanced Data Structures Notes
 
 These are pandoc markdown notes for the UF EDGE course *Advanced Data Structures (COP 5536)* during Summer 2016.
 
+*Pandoc is required to build these notes*
+
 To re-build pdfs for each set of notes:
 
     make clean all
