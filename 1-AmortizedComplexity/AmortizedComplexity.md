@@ -33,5 +33,5 @@ Methods to find Amortized Complexity:
 		* A(i) = C(i)+P(i)
 	* Apply this to a known cost to find amortized cost
 		* $\Delta$P = P(i) - (Pi-1)
-		* Aggregate Cost = ActualCost + $\Delta$P
+		* Amortized Cost = ActualCost + $\Delta$P
 	* Show that P(n)-P(0) >= 0

@@ -1,7 +1,7 @@
 Single Ended Priority Queue
 ===========================
 
-*Lecture 11*
+*Lecture 11-12*
 
 *Because Heaps aren't good enough*
 
