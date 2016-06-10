@@ -5,8 +5,8 @@ These are pandoc markdown notes for the UF EDGE course *Advanced Data Structures
 
 To re-build pdfs for each set of notes:
 
-   make clean all
+    make clean all
 
 To create a single Notes.pdf file containing all notes:
 
-   make composite
+    make composite
