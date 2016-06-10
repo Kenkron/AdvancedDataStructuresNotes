@@ -1,10 +1,15 @@
+formatting := fontsize=12pt geometry:margin=1in
+args := $(addprefix -V, $(formatting))
 sources := $(wildcard */*.md)
 dests := $(addsuffix .pdf, $(basename $(sources)))
 
 %.pdf:
-	pandoc -V geometry:margin=1in -V fontsize=12pt $(addsuffix .md, $(basename $@)) -o $@
+	pandoc $(args) $(addsuffix .md, $(basename $@)) -o $@
 
 all:$(dests)
+
+composite:
+	for f in */*.md; do (cat $${f} ; echo "\pagebreak\n"); done | pandoc $(args) -o Notes.pdf
 
 clean:
 	rm -f */*.pdf
