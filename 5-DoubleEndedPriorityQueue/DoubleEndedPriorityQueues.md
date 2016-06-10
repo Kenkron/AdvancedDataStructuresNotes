@@ -1,5 +1,5 @@
-Double Ended Priority Queue
-===========================
+Double Ended Priority Queues
+============================
 
 *Lecture 9-10*
 

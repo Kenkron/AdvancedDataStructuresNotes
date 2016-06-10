@@ -1,5 +1,5 @@
-Single Ended Priority Queue
-===========================
+Single Ended Priority Queues
+============================
 
 *Lecture 11-12*
 
