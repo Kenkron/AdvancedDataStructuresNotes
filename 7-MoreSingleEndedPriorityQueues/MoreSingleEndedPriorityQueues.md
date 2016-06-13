@@ -3,44 +3,44 @@ Fibonacci Heaps
 
 *Lectures 14-15*
 
-*Binomial heaps will soon be obselete*
+*Binomial heaps will soon be obsolete*
 
-* Terible Actual Complexity
-	* O(n) remove min
+* Bad Actual Complexity
+	* O(n) remove best
 	* O(n) remove
 	* O(n) decrease key
 	* ( O(1) insert and meld )
 * Good Amortized complexity
-	* O(log(n)) remove min
+	* O(log(n)) remove best
 	* O(log(n)) remove
-	* O(1) decresed key
+	* O(1) Improve Key
 * Proof for these complexities is in another Power Point
 
-###Min Fibonacci Heap###
+###Min/Max Fibonacci Heap###
 
-* Collection of min trees
-* Minimum size of the n'th min tree is the n'th fibonacci number
+* Collection of min/max trees
+* Minimum size of the n'th tree is the n'th Fibonacci number
 * Like a Binomial Heap, each node points to its next child
 * *Unlike* a Binomial Heap:
-	* each node points to its previous child (children are in a doubl linked list)
+	* each node points to its previous child (children are in a doubly linked list)
 	* each node points to its parent
 	* each node stores a "child cut": whether it has lost a child since it became a child of this parent
 * Like a Binomial Heap:
 	* Insert adds a one node tree
 		* When a node is made a child, set it's ChildCut to False
 	* Meld combines two top level lists
-	* Remove min requires pairwise combining of euqal degree trees
+	* RemoveBest requires pairwise combining of euqual degree trees
 * *Unlike* a Binomial Heap:
 	* Remove(Node n):
 		* Take it out of tree ( O(1) )
 			* This is possible because of the parent pointer
 		* Merge it's children ( O(1) )
-			* This is O(1) because a doubley linked list is used
+			* This is O(1) because a doubly linked list is used
 		* Nullify pointers to old node ( O(Node Degree) )
 		* Perform a Cascading Cut
-	* DecreaseKey(Node n, Amount m):
+	* ImproveKey(Node n, Amount m):
 		* Compare new value to parent
-		* If n is smaller, remove n and re-add it as a new top level tree
+		* If n is better, remove n and re-add it as a new top level tree
 		* Perform a Cascading Cut:
 	* Cascading Cut (Decrease Key has removed a child)		
 		* If ChildCut of the parent is false:
@@ -48,9 +48,9 @@ Fibonacci Heaps
 		* else:
 			* Move the parent node to the top level
 			* Perform a Cascading Cut on the parent node's old parent
-		* This adds work proportional to the size of the tree, making Remove and DecreseKey O(n)
+		* This adds work proportional to the size of the tree, making Remove and ImproveKey O(n)
 
-###Example: Djikstra's Algorithm###
+###Example: Dijkstra's Algorithm###
 
 *In a network, find shortest path from one node to another *
 
@@ -69,10 +69,10 @@ Let:
 * *e* represent the number of edges
 	* depending on the graph, *e* may be between $n$ and $n^2$
 
-Djikstra's Algorithm requires a data structure for distance values with:
+Dijkstra's Algorithm requires a data structure for distance values with:
 
 * **RemoveBest()** to remove from the unvisited set (done O(n) times)
-* **Decrese()** to decrese the distance values connected to a visited node (done O(e) times)
+* **Decrease()** to decrease the distance values connected to a visited node (done O(e) times)
 
 Overall complexity of these operations for various data structures:
 
@@ -83,7 +83,7 @@ Overall complexity of these operations for various data structures:
 Pairing Heaps
 -------------
 
-*Worse complexity than fibonacci heap, but better average run time (and easier to program)*
+*Worse complexity than Fibonacci Heap, but better average run time (and easier to program)*
 
 O(log(n)) time for:
 
@@ -93,7 +93,7 @@ O(log(n)) time for:
 * Remove
 * Decrease key
 
-Unlike a fibonacci/binomial heap, this structure has only a single top node.
+Unlike a Fibonacci/Binomial Heap, this structure has only a single top node.
 
 Each node stores:
 
@@ -120,10 +120,11 @@ Operations:
 	* Good Ways (give O(log(n)) complexity):
 		* Two Pass
 			* First Pass: pair up the subtrees and meld the pairs
-			* Second Pass: meld the last most subtree with every other subtree, goint from last to first
+			* Second Pass: meld the last most subtree with every other subtree, going from last to first
 			* The second pass is basically the bad way, but backwards
-		* Miltipass
+		* Multi-pass
 			* pair up the subtrees, meld the pairs, and repeat until there is only one tree
-* Remove Nonroot
+* Remove Non-root
 	* Remove node
-	* Meld it's children with root (using either Two Pass or Multipass, as in Remove Best)
+	* Meld it's children with root (using either Two Pass or Multi-pass, as in Remove Best)
+
