@@ -1,4 +1,5 @@
-formatting := fontsize=12pt geometry:margin=1in
+formatting := fontsize=12pt
+smallmargin := geometry:margin=1in
 args := $(addprefix -V, $(formatting))
 sources := $(wildcard */*.md)
 dests := $(addsuffix .pdf, $(basename $(sources)))

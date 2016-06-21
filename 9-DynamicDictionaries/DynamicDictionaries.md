@@ -44,10 +44,9 @@ Let:
 * H(tree) = height of tree
 * L = left child
 * R = right child
+* **Balance Factor** = H(L) - H(R)
 
-AVL Tree:
+A tree is an AVL Tree iff for every node, the balance factor is between -1 and 1 (inclusive).
 
-* Binary Tree
-* For every node, there is a "Balance Factor" x
-	* x = H(L) - H(R)
-	* $-1 \leq x \leq 1$
+
+
