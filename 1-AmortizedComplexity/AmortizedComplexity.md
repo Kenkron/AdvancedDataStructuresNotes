@@ -1,5 +1,6 @@
 Amortized Complexity
 ====================
+--------------------
 
 *Lectures 1-2*
 

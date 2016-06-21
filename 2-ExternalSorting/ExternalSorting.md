@@ -1,5 +1,6 @@
 External Sorting
 ================
+----------------
 
 *Lectures 3-4*
 

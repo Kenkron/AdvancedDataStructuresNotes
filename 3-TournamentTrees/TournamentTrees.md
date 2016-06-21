@@ -1,5 +1,6 @@
 Tournament Trees
 ================
+----------------
 
 *Lecture 5-6*
 
@@ -50,7 +51,7 @@ Loser Tree
 * Run Merging (in Mergesort)
 * Truck Loading (A.K.A: Bin Packing)
 
-Truck Loading (A.K.A: Bin Packing)
+Truck Loading (A.K.A: Bin Packing){#bin_packing}
 ----------------------------------
 
 * There are `n` packages
